@@ -5,7 +5,6 @@ from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.client.telegram import TelegramAPIServer
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-# ТВОЙ РАБОЧИЙ ТОКЕН И ССЫЛКА ОБЛАКА (Вставь сюда токен от BotFather)
 TOKEN = "TOKEN WHERE R UUUUUUUUU"
 MY_CLOUDFLARE_URL = "https://viperrkaibot.pazan4ok.workers.dev/"
 
@@ -15,7 +14,6 @@ session = AiohttpSession(api=my_private_server)
 bot = Bot(token=TOKEN, session=session)
 dp = Dispatcher()
 
-# ГЛАВНОЕ МЕНЮ (Выбор артиста)
 main_keyboard = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="🪐 Kai Angel"), KeyboardButton(text="🧛 9mice")],
@@ -25,7 +23,6 @@ main_keyboard = ReplyKeyboardMarkup(
     input_field_placeholder="Выбери артиста или релиз..."
 )
 
-# МЕНЮ ДЛЯ KAI ANGEL
 kai_keyboard = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="🔥 Для зала (Драйв Кая)"), KeyboardButton(text="💔 Грустный вайб Кая")],
@@ -34,7 +31,7 @@ kai_keyboard = ReplyKeyboardMarkup(
     resize_keyboard=True
 )
 
-# МЕНЮ ДЛЯ 9MICE
+
 mice_keyboard = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="⚡ Драйв Майса"), KeyboardButton(text="⛓️ Темный вайб Майса")],
@@ -43,9 +40,9 @@ mice_keyboard = ReplyKeyboardMarkup(
     resize_keyboard=True
 )
 
-# БАЗА ДАННЫХ ТРЕКОВ
+
 playlists = {
-    # --- KAI ANGEL ---
+    
     "🔥 для зала (драйв кая)": (
         "🔊 *KAI ANGEL DRIVE (Для жесткого кача):*\n\n"
         "1️⃣ *OFFICE SONG* — электронный качающий трек с альбома 'shh!'. Мощный ритм, под который только и надо поднимать веса!\n"
@@ -71,7 +68,7 @@ playlists = {
         "🔗 [Слушать треки в профиле Kai Angel на SoundCloud](https://soundcloud.com)"
     ),
     
-    # --- 9MICE ---
+    
     "⚡ драйв майса": (
         "🔊 *9MICE DRIVE (Максимальный разгон в зале):*\n\n"
         "1️⃣ *BELLA* — плотный и качающий трек в фирменном стиле Майса с альбома 'ASPHALT'. Задает правильный темп тренировке!\n"
@@ -91,7 +88,7 @@ playlists = {
         "⚠️ *P.S. SoundCloud заблокирован в РФ. Ссылка откроется только с включенным VPN!*"
     ),
     
-    # --- СОВМЕСТНЫЕ / ДРОП ---
+   
         "🦇 viperr (совместные)": (
 
         "🦇 *VIPERR ANTHEMS (Главные совместные фиты дуэта):*\n\n"
@@ -110,7 +107,7 @@ playlists = {
     )
 }
 
-# Главная клавиатура (названия плейлистов строго сохранены!)
+
 mood_keyboard = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="🪐 Kai Angel"), KeyboardButton(text="🧛 9mice")],
